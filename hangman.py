@@ -128,16 +128,17 @@ def play(word):
 
         if len(user_input) > 1:
             if word == user_input:
-                print('Congratulations! You are right')
+                print('Congratulations! You are right.')
                 break
             else:
                 guessed_words.append(user_input)
                 tries -= 1
                 print(display_hangman(tries))
                 print(f'Miss! {tries} tries left')
+                print_word_completion(word, guessed_letters)
                 if tries == 0:
                     print(
-                        f'Unfortunately, you couldn\'t guess the word. It was {word}')
+                        f'Unfortunately, you couldn\'t guess the word: \u001b[34m{word}\u001b[0m')
                     break
                 continue
         if len(user_input) == 1:
@@ -162,13 +163,14 @@ def play(word):
                 print_word_completion(word, guessed_letters)
                 if tries == 0:
                     print(
-                        f'Unfortunately, you couldn\'t guess the word. It was {word}')
+                        f'Unfortunately, you couldn\'t guess the word: \u001b[34m{word}\u001b[0m')
                     break
                 continue
 
 
 while True:
     play(get_word())
+    print()
     ask = play_again()
     if ask == 'y':
         continue
