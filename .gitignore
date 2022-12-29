@@ -5,3 +5,4 @@ data
 settings.json
 codin.code-workspace
 practice.py
+venv*
