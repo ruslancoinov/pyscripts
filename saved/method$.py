@@ -31,3 +31,41 @@ for letter in s:
     if foo < 97:
         foo += 26
     print(chr(foo), end='')
+
+# pswd generator
+from random import randint
+
+length = int(input())    # pswd length
+
+for _ in range(length):
+    l = (randint(65, 90), randint(97, 122))[randint(0, 1)]
+    print(chr(l), end='')
+print()
+
+
+# ip generator
+from random import randrange
+def generate_ip():
+    return f'{randrange(256)}.{randrange(256)}.{randrange(256)}.{randrange(256)}'
+
+
+# algorithm satto - shuffle all roughly
+from random import randrange
+
+def sattoloCycle(items):
+    i = len(items)
+    while i > 1:
+        i = i - 1
+        j = randrange(i)  # 0 <= j <= i-1
+        items[j], items[i] = items[i], items[j]
+    return items
+
+
+items = [input() for _ in range(int(input()))]
+
+items_copy = items.copy()
+
+sattoloCycle(items)
+
+for i in range(len(items)):
+    print(f'{items_copy[i]} - {items[i]}')

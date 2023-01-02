@@ -1,4 +1,3 @@
-import sys
 from sys import getsizeof
 from time import monotonic, sleep
 
@@ -12,8 +11,7 @@ def greeting(count):
              f'INTERVAL RANGE = {count}')
     for c in greet:
         for h in c:
-            print(h, end='')
-            sys.stdout.flush()
+            print(h, end='', flush=True)
             sleep(0.04)
         print()
         if greet.index(c) == 0:

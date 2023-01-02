@@ -40,3 +40,17 @@ for i in range(n):
             matrix3[i][j] += matrix1[i][x] * matrix2[x][j]
 for row in matrix3:
     print(*row)
+
+
+# 5 Bingo board
+from random import sample
+
+# all numbers are different and 0 in the center
+numbers = sample(range(1, 56), 25)
+card = [[numbers.pop() for _ in range(5)] for _ in range(5)]
+card[2][2] = 0
+
+for i in range(5):
+    for j in range(5):
+        print(str(card[i][j]).ljust(3), end='')
+    print()
