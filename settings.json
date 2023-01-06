@@ -1,0 +1,23 @@
+# ~/.config/VSCodium/User/
+{
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
+    "workbench.preferredDarkColorTheme": "Monokai Dimmed",
+    "workbench.preferredLightColorTheme": "Default Dark+",
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "onWindowChange",
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.renderWhitespace": "all",
+    "editor.renderLineHighlight": "none",
+    "workbench.preferredHighContrastColorTheme": "Dracula",
+    "workbench.colorTheme": "Dracula",
+    "editor.wordWrap": "on",
+    "editor.rulers": [
+        80,120
+    ]
+}

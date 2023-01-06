@@ -25,3 +25,10 @@ for _ in range(m - 1):  # Compare other lessons with first =>' m - 1'
     l.intersection_update([input() for _ in range(int(input()))])
 
 print(*sorted(l), sep='\n')
+
+
+# 4 Max and Min sum of number
+from decimal import Decimal
+num = Decimal(input())
+print(max(num.as_tuple().digits) + min(num.as_tuple().digits)
+      if int(num) != 0 else max(num.as_tuple().digits))

@@ -1,8 +1,6 @@
 *.txt
 .vscode
 __pycache__
-data
-settings.json
 codin.code-workspace
 practice.py
 venv*
