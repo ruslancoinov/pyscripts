@@ -19,3 +19,46 @@ for i in range(int(input())):
     total_list = merge(total_list, l)
 
 print(*total_list)
+
+
+# 4
+# greet takes 1+ args
+def greet(name, *args):
+    return f'Hello, {" and ".join(((name,) + args))}!'
+
+
+# 5. sort the list by categories
+athletes = [('Дима', 10, 130, 35), ('Тимур', 11, 135, 39),
+            ('Руслан', 9, 140, 33), ('Рустам', 10, 128, 30),
+            ('Амир', 16, 170, 70), ('Рома', 16, 188, 100),
+            ('Матвей', 17, 168, 68), ('Петя', 15, 190, 90)]
+
+# I)
+def generator_comparator(value_of_tpl):
+    def comparator(tpl):
+        return tpl[value_of_tpl - 1]
+    return comparator  # return comparator function
+comp = generator_comparator(int(input()))
+athletes.sort(key=comp)
+
+# II)
+def comparator(tpl):
+    return tpl[value_of_tpl - 1]
+value_of_tpl = input()
+# needs to be not other name-so key won't see it, and function not see it local but see global
+athletes.sort(key=comparator)
+
+
+# 6. THINK ABOUT IT
+import math
+
+def pwr(p):
+    def num_pwr(x):
+        return x ** p
+    return num_pwr
+
+my_dict = {'квадрат': pwr(2), 'куб': pwr(3), 'корень': pwr(0.5), 'модуль': abs, 'синус': math.sin}
+
+x, key = int(input()), input()
+
+print(my_dict[key](x))
